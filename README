@@ -1,0 +1,28 @@
+Kantipur to Unicode conversion
+-------------------------------
+
+Kantipur is a font often used to display Nepali text.  Nepali is a heavily ligature-based script - up to three discreet characters, and additional accents, can be displayed as a single combined glyph.  The common solution for this is to use a standard ASCII character set, but using a font such as Kantipur which has glyphs for both whole characters, and subh-character elements (accents, partial characters) and appropriate kerning so these elements appear on top of each other.
+
+The problem with this is that the data of the text is not preserved.  Text written in this way is only applicable to a single font (even different versions of the same font family may render differently), although most Nepali fonts have very similar rules.  Text written in Kantipur is not searchable, and mixing languages is impossible.
+
+
+OLE Nepal upgraded their EPaath Flash activities to support Unicode, but had a large amount of legacy content in Kantipur.  To support the automatic (and even dynamic) replacement of this with unicode, this library was created.
+
+
+LICENSE:
+---------------
+All code associated with this utility is licensed under the open source MIT License.
+
+
+FAQ:
+---------------
+
+Q) What original text will this utility convert?
+A) OLE Nepal's content was originally using the Kantipur font, developed in Altsys Fontographer 3.5 (not the newer version created in Macromedia Fontographer 4.1.5).  The converted unicode is acceptable when rendered in Lohit Nepali font, although is not always identical.
+
+Q) Incorrect unicode is created from my input source.
+A) Perhaps your input source was not designed for the Kantipur font.  Copy your source into Kantipur, see what changes need to be made to make the text visually identical, then attempt conversion to unicode.
+
+Q) The input looks fine in Kantipur, but still isn't displaying correctly in unicode.
+A) Nepali unicode fonts all have different ligature rules, and display complex glyphs in different combinations.  I am not sure why this is the case (whether they are designed more for Hindi/Sanskrit, or whether they are simply wrong), but it is a complex field.  My Nepali colleagues at OLE Nepal were often in disagreement at how a glyph should be displayed, and we could not find a single font that was "perfect".  Lohit Nepali was our best choice, but on occasional glyphs Samanata or Mangal gave a more "accurate" result.
+
